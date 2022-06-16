@@ -1,0 +1,8 @@
+FROM node:lts-alpine
+LABEL author="joaovictorbras@gmail.com"
+
+RUN yarn
+
+WORKDIR /app
+
+EXPOSE 3000

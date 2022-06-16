@@ -1,0 +1,9 @@
+FROM node:lts-alpine
+LABEL author="joaovictorbras@gmail.com"
+
+RUN npm i -g @nestjs/cli
+RUN yarn
+
+WORKDIR /app
+
+EXPOSE 3000

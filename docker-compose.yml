@@ -1,0 +1,21 @@
+version: "2.2"
+services:
+  front:
+    build:
+      dockerfile: ./front/dockerfile
+      context: .
+    volumes:
+      - ./front:/app
+    ports:
+      - "3000:3000"
+    command: yarn start
+
+  back:
+    build:
+      dockerfile: ./back/dockerfile
+      context: .
+    volumes:
+      - ./back:/app
+    ports:
+      - "5000:3000"
+    command: yarn start:dev
