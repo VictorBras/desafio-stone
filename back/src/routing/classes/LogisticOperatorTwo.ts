@@ -1,4 +1,4 @@
-import * as moment from 'moment';
+import * as momentBusiness from 'moment-business-days';
 
 import { LogisticOperator, PriceRange } from './LogisticOperator';
 
@@ -22,13 +22,13 @@ export class LogisticOperatorTwo extends LogisticOperator {
   protected getDeliveryTime(priceRange: PriceRange): string {
     switch (priceRange) {
       case 'Short':
-        return moment().add(1, 'day').toISOString();
+        return momentBusiness().businessAdd(1, 'day').toISOString();
 
       case 'Medium':
-        return moment().add(2, 'days').toISOString();
+        return momentBusiness().businessAdd(2, 'days').toISOString();
 
       case 'Long':
-        return moment().add(5, 'days').toISOString();
+        return momentBusiness().businessAdd(5, 'days').toISOString();
     }
   }
 }
